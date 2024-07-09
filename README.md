@@ -17,7 +17,7 @@ This API allows users to interact with a remote server using SSH keys for authen
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/your-api.git
+   git clone https://github.com/p-shubh/server-bridge.git
    ```
 2. Navigate to the project directory:
    ```bash
