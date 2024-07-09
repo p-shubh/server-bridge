@@ -133,57 +133,8 @@ curl -X POST http://localhost:8080/directory \
   -H "Content-Type: application/json"
 ```
 
-## Implementation
-
-Here is a basic implementation of the API using the Gin framework in Golang:
-
-```go
-package main
-
-import (
-    "github.com/gin-gonic/gin"
-    "net/http"
-    // other necessary imports
-)
-
-func main() {
-    router := gin.Default()
-
-    router.POST("/upload", uploadFile)
-    router.POST("/download", downloadFile)
-    router.POST("/directory", showDirectory)
-
-    router.Run(":8080")
-}
-
-func uploadFile(c *gin.Context) {
-    // implement file upload logic
-    c.JSON(http.StatusOK, gin.H{"status": "success", "message": "File uploaded successfully"})
-}
-
-func downloadFile(c *gin.Context) {
-    // implement file download logic
-    c.File("/path/to/downloaded/file")
-}
-
-func showDirectory(c *gin.Context) {
-    // implement directory details retrieval logic
-    c.JSON(http.StatusOK, gin.H{
-        "status": "success",
-        "directory_details": []map[string]interface{}{
-            {"name": "file1", "type": "file", "size": 12345, "mod_time": "2024-07-09T12:34:56Z"},
-            {"name": "file2", "type": "file", "size": 67890, "mod_time": "2024-07-09T12:34:56Z"},
-        },
-    })
-}
-```
-
 Replace the placeholder implementation with the actual logic for handling SSH connections and file operations.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this README file to better suit your project's needs.
