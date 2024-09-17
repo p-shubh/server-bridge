@@ -1,0 +1,133 @@
+{
+    "info": {
+        "name": "SSH File Operations",
+        "_postman_id": "d8f0d78e-5f6c-45c2-9007-30634d2d129b",
+        "description": "API Collection for SSH File Operations (Upload, Download, List Directory)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Upload File",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "server",
+                            "value": "192.168.1.100:22",
+                            "type": "text"
+                        },
+                        {
+                            "key": "user",
+                            "value": "root",
+                            "type": "text"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password",
+                            "type": "text"
+                        },
+                        {
+                            "key": "localPath",
+                            "type": "file",
+                            "src": ""
+                        },
+                        {
+                            "key": "remotePath",
+                            "value": "/home/root/file.txt",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "http://localhost:8080/upload",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "upload"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Download File",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/download?server=192.168.1.100:22&user=root&password=password&remotePath=/home/root/file.txt&localPath=./file_downloaded.txt",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "download"
+                    ],
+                    "query": [
+                        {
+                            "key": "server",
+                            "value": "192.168.1.100:22"
+                        },
+                        {
+                            "key": "user",
+                            "value": "root"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password"
+                        },
+                        {
+                            "key": "remotePath",
+                            "value": "/home/root/file.txt"
+                        },
+                        {
+                            "key": "localPath",
+                            "value": "./file_downloaded.txt"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "List Directory",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/list?server=192.168.1.100:22&user=root&password=password",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "list"
+                    ],
+                    "query": [
+                        {
+                            "key": "server",
+                            "value": "192.168.1.100:22"
+                        },
+                        {
+                            "key": "user",
+                            "value": "root"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
